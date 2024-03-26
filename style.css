@@ -102,7 +102,7 @@ a{
 }
 
 img{
-  max-width: 51%;
+  max-width: 65%;
   height: auto;
 }
 
@@ -142,10 +142,11 @@ img{
 }
 
 .l-header{
+  height: 61px;
   width: 100%;
   position: fixed;
   top: 15px;
-  left: -16px;
+  left: 0px;
   z-index: var(--z-fixed);
   background-color: var(--body-color);
 }

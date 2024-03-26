@@ -1,296 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ved Stone Constructions - Revitalize Your Experience. Expert stone craftsmanship for gates, temples, compound halls, and more. Contact us for inquiries.">
-    <meta name="keywords" content="Ved Stone, VedStone, stone constructions, gates, temples, compound halls, stone cutting, constructions, garden decorations, Gangdhrana Stone, custom fabrication, stone polishing">
-    <title>Ved Stone Constructions - Expert Stone Craftsmanship</title>
-    <!--========== BOX ICONS ==========-->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <!--========== CSS ==========-->
-    <link rel="stylesheet" href="style.css">
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="style.css">
+
+        <title>Ved Stone Constructions</title>
+    </head>
     <style>
-        .image-gallery {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
         
-        .image-gallery .image-item {
-            width: 30%;
-            text-align: center;
-        }
-        
-        .image-gallery img {
-            width: 100%;
-            height: 220px;
-            transition: transform 0.2s;
-        }
-        
-        .image-gallery .image-item:hover {
-            transform: scale(1.1);
-            border: 3px solid red;
-        }
-        
-        .image-description {
-            margin-top: 10px;
-        }
-        
-        @media only screen and (max-width: 800px) {
-            .image-gallery .image-item {
-                width: 40%;
-                margin: 20px;
-            }
-        }
-        
-        @media only screen and (max-width: 300px) {
-            .image-gallery .image-item {
-                width: 100%;
-                margin: 20px;
-            }
-        }
-    </style>
-</head>
 
-<body>
 
-    <!--========== SCROLL TOP ==========-->
-    <a href="#" class="scrolltop" id="scroll-top">
-        <i class='bx bx-chevron-up scrolltop__icon'></i>
-    </a>
 
-    <!--========== HEADER ==========-->
-    <header class="l-header" id="header">
-        <nav class="nav bd-container">
-            <img src="er.png" width="370" style="height: 100px; margin: 19px; padding-top: -12px;">
+        * {box-sizing:border-box}
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <!-- <li class="nav__item"><a href="#gallery" class="nav__link">Gallery</a></li> -->
-                    <li class="nav__item"><a href="#menu" class="nav__link">Services</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
-                    <!-- <li class="nav__item"><a href="login.html" class="nav__link">Login/Signup</a></li> -->
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
 
-                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
-                </ul>
-            </div>
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
 
-            <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bx-menu'></i>
-            </div>
-        </nav>
-    </header>
+/* Next & previous buttons */
+.prev {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding-top: 3287px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  margin-left: 43px;
+}
 
-    <main class="l-main">
-        <!--========== HOME ==========-->
-        <section class="home" id="home">
-            <div class="home__container bd-container bd-grid">
-                <div class="home__data">
-                    <p style="background-image: url(FINALOGO.png);"></p>
-                    <h1 class="home__subtitle" style="font-size: 40px; text-align: center; text-shadow: 2px 2px #000000; text-transform: uppercase;">Ved Stone Constructions</h1>
-                    <h2 class="home__subtitle" style="text-align: center;">"Revitalize Your Experience"</h2>
-                    <!-- <a href="booknow.html" class="button">Book Now</a>
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding-top: 3287px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  margin-right: 47px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+     </style>
+    <body>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header" style="margin-top: -15px;">
+            <nav class="nav bd-container">
+                <img src="er.png"  width="370" style="height: 100px; margin-top: 27px; padding-top: -12px;" >
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <!-- <li class="nav__item"><a href="#gallery" class="nav__link">Gallery</a></li> -->
+                        <li class="nav__item"><a href="#menu" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+                        <!-- <li class="nav__item"><a href="login.html" class="nav__link">Login/Signup</a></li> -->
+
+                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--========== HOME ==========-->
+            <section class="home" id="home">
+                <div class="home__container bd-container bd-grid">
+                    <div class="home__data">
+                        <p style="background-image: url(FINALOGO.png);"></p>
+                        <h1 class="home__subtitle" style="font-size: 40px; text-align: center; text-shadow: 2px 2px #000000; text-transform: uppercase;">Ved Stone Constructions</h1>
+                        <h2 class="home__subtitle" style="text-align: center;">"Revitalize Your Experience"</h2>
+                        <!-- <a href="booknow.html" class="button">Book Now</a>
                         <a href="#" class="button">Buy Our Products</a> -->
+                    </div>
+    
+                    <!-- <img src="assets/img/home.png" alt="" class="home__img"> -->
                 </div>
+            </section>
+            
+            <!--========== ABOUT ==========-->
+            <section class="about section bd-container" id="about">
+                <div class="about__container  bd-grid">
+                    <div class="about__data">
+                        <span class="section-subtitle about__initial" style="font-size: 30px; text-align: center;text-shadow: 2px 2px #000000; text-transform: uppercase;">About us</span>
+                        <h2 class="section-title about__initial">We make your <br> Experience Remarkable </h2>
+                        <p class="about__description">We possess the capability to fabricate a diverse array of structures, including gates of various designs, compound halls tailored to specific needs, ornate garden decorations crafted with meticulous attention to detail, temples imbued with sacred significance, as well as providing a comprehensive range of work materials and offering contract labor services to facilitate the realization of construction projects.</p>
 
-                <!-- <img src="assets/img/home.png" alt="" class="home__img"> -->
-            </div>
-        </section>
+                        
+                        <img src="a.jpeg"  width="230" style="height: 160px; margin: 20px;" >
+                        <img src="b.jpeg"  width="230" style="height: 160px; margin: 20px;" >
+                        <img src="c.jpeg"  width="230" style="height: 160px; margin: 20px;">
+                        <img src="d.jpeg"  width="230" style="height: 160px; margin: 20px;">
+                        <img src="e.jpeg"  width="230" style="height: 160px; margin: 20px;">
+                        <img src="g.jpeg"  width="230" style="height: 160px; margin: 20px;">
 
-        <!--========== ABOUT ==========-->
-        <section class="about section bd-container" id="about">
-            <div class="about__container  bd-grid">
-                <div class="about__data">
-                    <span class="section-subtitle about__initial" style="font-size: 30px; text-align: center;text-shadow: 2px 2px #000000; text-transform: uppercase;">About us</span>
-                    <h2 class="section-title about__initial">We make your <br> Experience Remarkable </h2>
-                    <p class="about__description">We possess the capability to fabricate a diverse array of structures, including gates of various designs, compound halls tailored to specific needs, ornate garden decorations crafted with meticulous attention to detail, temples imbued
-                        with sacred significance, as well as providing a comprehensive range of work materials and offering contract labor services to facilitate the realization of construction projects.</p>
-
-
-                    <img src="a.jpeg" width="230" style="height: 160px; margin: 20px;">
-                    <img src="b.jpeg" width="230" style="height: 160px; margin: 20px;">
-                    <img src="c.jpeg" width="230" style="height: 160px; margin: 20px;">
-                    <img src="d.jpeg" width="230" style="height: 160px; margin: 20px;">
-                    <img src="e.jpeg" width="230" style="height: 160px; margin: 20px;">
-                    <img src="g.jpeg" width="230" style="height: 160px; margin: 20px;">
-
-                </div>
-
-
-            </div>
-        </section>
-
-        <!--========== SERVICES ==========-->
-        <section class="services section bd-container" id="services">
-            <span class="section-subtitle" style="font-size: 30px; text-align: center;text-shadow: 2px 2px #000000; text-transform: uppercase;">Offering</span>
-            <h2 class="section-title">Our amazing services</h2>
-
-            <div class="services__container  bd-grid">
-                <div class="services__content">
-                    <img src="gate1.png" style="height: 60px; width: 60px;">
-                    <h3 class="services__title">GATE</h3>
-                    <p class="services__description">Step into luxury and security with our bespoke gates, where craftsmanship meets innovation to redefine your entrance experience, ensuring both style and safety seamlessly merge at your doorstep.</p>
-                </div>
-
-                <div class="services__content">
-                    <img src="temple.png" style="height: 60px; width: 60px;">
-                    <h3 class="services__title">TEMPLE</h3>
-                    <p class="services__description">Discover serenity and sanctity in our meticulously crafted temples, where timeless architecture meets spiritual resonance, offering a sacred space for introspection, worship, and connection with the divine.</p>
-                </div>
-
-                <div class="services__content">
-                    <img src="hall.png" style="height: 60px; width: 60px;">
-                    <h3 class="services__title">COMPOUND HALL</h3>
-                    <p class="services__description">Elevate your events with our exquisite compound halls, meticulously crafted to provide the perfect blend of elegance, functionality, and ambiance, ensuring unforgettable experiences for all occasions.</p>
-                </div>
-            </div>
-        </section>
-        <!--============GALLERY==========---------------->
-        <section class="about section bd-container" id="about">
-            <div class="about__container  bd-grid">
-                <div class="about__data">
-                    <span class="section-subtitle about__initial" style="font-size: 30px; text-align: center;text-shadow: 2px 2px #000000; text-transform: uppercase;">Gallery</span>
-
-                    <!-- Slideshow container -->
-                    <div class="slideshow-container">
-
-                        <!-- Full-width images with number and caption text -->
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="a.jpeg" width="900" style="height: 350px; margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="b.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="c.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="d.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="e.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="g.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="h.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="i.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="j.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="k.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="k.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="aa.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="bb.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="cc.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="dd.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="ee.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="ff.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="gg.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
-
-                        <div class="mySlides fade">
-                            <div class="numbertext"></div>
-                            <img src="hh.jpeg" width="900" style="height: 350px;margin: 30px;">
-                            <div class="text"></div>
-                        </div>
                     </div>
 
-
+                   
                 </div>
+            </section>
 
-                <!-- Next and previous buttons -->
-                <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-            </div>
-            <br>
+            <!--========== SERVICES ==========-->
+            <section class="services section bd-container" id="services">
+                <span class="section-subtitle" style="font-size: 30px; text-align: center;text-shadow: 2px 2px #000000; text-transform: uppercase;">Offering</span>
+                <h2 class="section-title">Our amazing services</h2>
 
-            <!-- The dots/circles -->
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
+                <div class="services__container  bd-grid">
+                    <div class="services__content">
+                        <img src="gate1.png" style="height: 60px; width: 60px;">
+                        <h3 class="services__title">GATE</h3>
+                        <p class="services__description">Step into luxury and security with our bespoke gates, where craftsmanship meets innovation to redefine your entrance experience, ensuring both style and safety seamlessly merge at your doorstep.</p>
+                    </div>
+
+                    <div class="services__content">
+                        <img src="temple.png" style="height: 60px; width: 60px;">
+                        <h3 class="services__title">TEMPLE</h3>
+                        <p class="services__description">Discover serenity and sanctity in our meticulously crafted temples, where timeless architecture meets spiritual resonance, offering a sacred space for introspection, worship, and connection with the divine.</p>
+                    </div>
+
+                    <div class="services__content">
+                        <img src="hall.png" style="height: 60px; width: 60px;">
+                        <h3 class="services__title">COMPOUND HALL</h3>
+                        <p class="services__description">Elevate your events with our exquisite compound halls, meticulously crafted to provide the perfect blend of elegance, functionality, and ambiance, ensuring unforgettable experiences for all occasions.</p>
+                    </div>
+                </div>
+            </section>
+<!--============GALLERY==========---------------->
+<section class="about section bd-container" id="about">
+    <div class="about__container  bd-grid">
+        <div class="about__data">
+            <span class="section-subtitle about__initial" style="font-size: 30px; text-align: center;text-shadow: 2px 2px #000000; text-transform: uppercase;">Gallery</span>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="a.jpeg" width="1300" style="height: 350px; margin: 30px;">
+      <div class="text"></div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="b.jpeg" width="1300" style="height: 350px;margin: 30px;">
+      <div class="text"></div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="c.jpeg" width="1300" style="height: 350px;margin: 30px;">
+      <div class="text"></div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="d.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="e.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="g.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="h.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="i.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="j.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="k.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      
+
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="aa.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="bb.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="cc.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="dd.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="ee.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="ff.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="gg.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="hh.jpeg" width="1300" style="height: 350px;margin: 30px;">
+        <div class="text"></div>
+      </div>
+    </div>
+
+
+</div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
 
             <!--========== MENU ==========-->
             <section class="menu section bd-container" id="menu">
@@ -313,7 +372,7 @@
                         <span class="menu__preci">$12.00</span>
                         <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a> -->
                     </div>
-
+                    
                     <div class="menu__content">
                         <!-- <img src="assets/img/plate3.png" alt="" class="menu__img"> -->
                         <h3 class="menu__name">Gates</h3>
@@ -368,7 +427,7 @@
                 </div>
             </section>
 
-
+            
             <!--========== CONTACT US ==========-->
             <section class="contact section bd-container" id="contact">
                 <div class="contact__container bd-grid">
@@ -386,50 +445,59 @@
                     </div> -->
                 </div>
             </section>
-    </main>
+        </main>
 
-    <!--========== FOOTER ==========-->
-    <footer class="footer section bd-container">
-        <div class="footer__container bd-grid">
-            <div class="footer__content">
-                <div>
-                    <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
-                    <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
-                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+        <!--========== FOOTER ==========-->
+        <footer class="footer section bd-container">
+            <div class="footer__container bd-grid">
+                <div class="footer__content">
+                    <!-- <a href="#" class="footer__logo">Tasty Food</a>
+                    <span class="footer__description">Restaurant</span> -->
+                    <div>
+                        <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Services</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Gates</a></li>
+                        <li><a href="#" class="footer__link">Compound hall</a></li>
+                        <li><a href="#" class="footer__link">Temples</a></li>
+                        <li><a href="#" class="footer__link">Decorative Gardens</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Information</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Event</a></li>
+                        <li><a href="#" class="footer__link">Contact us</a></li>
+                        <li><a href="#" class="footer__link">Privacy policy</a></li>
+                        <li><a href="#" class="footer__link">Terms of services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Address</h3>
+                    <ul>
+                        <li>Junagadh</li>
+                        <li>Gujarat</li>
+                        <li>382001</li>
+                        <li>vedstoneconstructions@gmail.com</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer__content">
-                <h3 class="footer__title">Services</h3>
-                <ul>
-                    <li><a href="#menu" class="footer__link">Gates</a></li>
-                    <li><a href="#menu" class="footer__link">Compound hall</a></li>
-                    <li><a href="#menu" class="footer__link">Temples</a></li>
-                    <li><a href="#menu" class="footer__link">Decorative Gardens</a></li>
-                </ul>
-            </div>
-            <div class="footer__content">
-                <h3 class="footer__title">Information</h3>
-                <ul>
-                    <li><a href="#contact" class="footer__link">Contact us</a></li>
-                    <li><a href="#" class="footer__link">Privacy policy</a></li>
-                    <li><a href="#" class="footer__link">Terms of services</a></li>
-                </ul>
-            </div>
-            <div class="footer__content">
-                <h3 class="footer__title">Address</h3>
-                <ul>
-                    <li>Junagadh, Gujarat, 382001</li>
-                    <li>Email: vedstoneconstructions@gmail.com</li>
-                </ul>
-            </div>
-        </div>
-        <p class="footer__copy">&#169; 2024 Ved Stone Constructions. All rights reserved</p>
-    </footer>
 
-    <!--========== SCROLL REVEAL ==========-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <!--========== MAIN JS ==========-->
-    <script src="index.js"></script>
-</body>
+            <p class="footer__copy">&#169; 2024 Ved Stone Constructions. All right reserved</p>
+        </footer>
 
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="index.js"></script>
+    </body>
 </html>
